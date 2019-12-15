@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "557886307402",
+    "firebase_url": "https://anonymous-chat-c8edd.firebaseio.com",
+    "project_id": "anonymous-chat-c8edd",
+    "storage_bucket": "anonymous-chat-c8edd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557886307402:android:516fa248c4c56e056bbab3",
+        "android_client_info": {
+          "package_name": "com.example.anonymous_chat_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557886307402-d0a20qbon0klvgf2oh1234gsarl47adh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtXAz6MrOjryi6LfiKUo8AHN2J-23t7HE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557886307402-d0a20qbon0klvgf2oh1234gsarl47adh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "557886307402-qilr8b7c0oa976l698vdkpfv2ah35lf4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.anonymousChatMobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
