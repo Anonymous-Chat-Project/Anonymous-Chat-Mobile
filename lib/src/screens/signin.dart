@@ -1,5 +1,4 @@
 import 'package:anonymous_chat_mobile/src/services/auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -11,15 +10,7 @@ class _SignInState extends State<SignIn> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
-  FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-
-  void _onSignIn(String email, String password) {
-    try {
-      _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
-    } catch (e) {
-      print(e);
-    }
-  }
+  final FirebaseAuthentication _auth = new FirebaseAuthentication();
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +41,6 @@ class _SignInState extends State<SignIn> {
                   controller: _passwordController,
                   onChanged: (password) {
                     setState(() {});
-                    
                   },
                   decoration: InputDecoration(
                       labelText: 'Password',
@@ -63,7 +53,7 @@ class _SignInState extends State<SignIn> {
                 width: double.infinity,
                 child: RaisedButton(
                   color: Colors.blue,
-                  onPressed: () => _onSignIn(_emailController.text, _passwordController.text),
+                  onPressed: () async => _auth.onSignIn(_emailController.text, _passwordController.text),
                   child: Text('Sign In', style: TextStyle(color: Colors.white)),
                 ),
               )

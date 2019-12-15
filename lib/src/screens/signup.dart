@@ -11,10 +11,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
-  void _onSignUp() {
-    final newAccount = new FirebaseAuthentication();
-    newAccount.onSignUp(_emailController.text, _passwordController.text);
-  }
+  final FirebaseAuthentication _auth = new FirebaseAuthentication();
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +54,7 @@ class _SignUpState extends State<SignUp> {
                 width: double.infinity,
                 child: RaisedButton(
                   color: Colors.blue,
-                  onPressed: _onSignUp,
+                  onPressed: () async => _auth.onSignUp(_emailController.text, _passwordController.text),
                   child: Text('Sign Up', style: TextStyle(color: Colors.white)),
                 ),
               )
