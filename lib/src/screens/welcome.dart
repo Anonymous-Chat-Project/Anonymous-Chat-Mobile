@@ -13,6 +13,7 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   final FirebaseAuthentication _auth = new FirebaseAuthentication();
+  bool isNavigate = false;
 
   void _onSignIn() {
     Navigator.of(context)
@@ -27,6 +28,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<User>(context);
+
+    if (user != null) {
+      return AppNavigator();
+    }
+
     return Scaffold(
       body: SafeArea(
         child: Container(

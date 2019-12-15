@@ -1,5 +1,8 @@
+import 'package:anonymous_chat_mobile/src/models/user.dart';
+import 'package:anonymous_chat_mobile/src/navigators/app_navigator.dart';
 import 'package:anonymous_chat_mobile/src/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -14,6 +17,12 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<User>(context);
+
+    if (user != null) {
+      return AppNavigator();
+    }
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
