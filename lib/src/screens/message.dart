@@ -30,9 +30,9 @@ class _MessageState extends State<Message> {
                     onPressed: () {},
                     child: MessageCard(
                         'https://picsum.photos/200/300?random=$index',
-                        'user$index',
-                        'content$index',
-                        5));
+                        'user${index + 1}',
+                        'content${index + 1}',
+                        index + 1));
               }),
         ),
       ),

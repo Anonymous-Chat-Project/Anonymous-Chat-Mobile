@@ -62,7 +62,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     if (result == null) {
                       print('error signing in');
                     } else {
-                      print(result.uid);
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => AppNavigator()));
                     }
