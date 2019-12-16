@@ -1,3 +1,4 @@
+import 'package:anonymous_chat_mobile/src/widgets/message_card.dart';
 import 'package:flutter/material.dart';
 
 class Message extends StatefulWidget {
@@ -19,8 +20,21 @@ class _MessageState extends State<Message> {
       ),
       body: SafeArea(
         child: Container(
-            padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
-            child: Text('Message Screen')),
+          child: ListView.builder(
+              itemCount: 20,
+              itemBuilder: (context, index) {
+                return RaisedButton(
+                    color: Colors.white,
+                    elevation: 0.0,
+                    padding: EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
+                    onPressed: () {},
+                    child: MessageCard(
+                        'https://picsum.photos/200/300?random=$index',
+                        'user$index',
+                        'content$index',
+                        5));
+              }),
+        ),
       ),
     );
   }

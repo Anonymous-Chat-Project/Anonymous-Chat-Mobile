@@ -25,6 +25,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         .push(MaterialPageRoute(builder: (context) => SignUp()));
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<User>(context);
